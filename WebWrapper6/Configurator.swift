@@ -9,5 +9,4 @@ import Foundation
 
 enum Configurator {
     static let url: URL? = URL(string: "https://wellhello.com/site/user/home?chatOpened=1")
-    static let projectName: String = "WebWrapper6"
 }

@@ -38,6 +38,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         window?.center()
         window?.makeKeyAndOrderFront(nil)
+        
+        if let title = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String {
+            window?.title = title
+        }
+        
         window?.contentViewController = WebViewController()
     }
 }
