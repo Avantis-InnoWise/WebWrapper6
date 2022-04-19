@@ -34,7 +34,7 @@
 		0D7C5E4528082C2400D7EB72 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		0D7C5E4728082C2500D7EB72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D8C7ECC280D6B2A00A87B0C /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
-		0D8C7ECE280D6B4F00A87B0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0D8C7ECE280D6B4F00A87B0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,21 +67,61 @@
 		0D7C5E4228082C2400D7EB72 /* WebWrapper6 */ = {
 			isa = PBXGroup;
 			children = (
-				0D532ECA28095FC10080A079 /* Configurator.swift */,
-				0D8C7ECC280D6B2A00A87B0C /* InfoPlist.strings */,
-				0D8C7ECE280D6B4F00A87B0C /* Info.plist */,
-				0D7C5E4328082C2400D7EB72 /* AppDelegate.swift */,
-				0D532EC628095E110080A079 /* main.swift */,
-				0D7C5E4528082C2400D7EB72 /* WebViewController.swift */,
-				0D532EC428095DA10080A079 /* WebMainView.swift */,
-				0D7466C52809A0510070046A /* NSView + Extension.swift */,
-				0D7466C32809A0130070046A /* String + Extension.swift */,
-				0D7C5E4728082C2500D7EB72 /* Assets.xcassets */,
-				0D532EC828095FA90080A079 /* Localizable.strings */,
-				0D414C50280832640093F6C2 /* WebWrapper6.entitlements */,
-				0D7466CB2809AB810070046A /* Main.xib */,
+				0DF19C64280DB3A600493DDA /* configuration */,
+				0DF19C62280DB36700493DDA /* main */,
+				0DF19C66280DB42000493DDA /* screens */,
+				0DF19C65280DB3B800493DDA /* res */,
+				0DF19C63280DB39200493DDA /* helpers */,
 			);
 			path = WebWrapper6;
+			sourceTree = "<group>";
+		};
+		0DF19C62280DB36700493DDA /* main */ = {
+			isa = PBXGroup;
+			children = (
+				0D532EC628095E110080A079 /* main.swift */,
+				0D7C5E4328082C2400D7EB72 /* AppDelegate.swift */,
+				0D7466CB2809AB810070046A /* Main.xib */,
+				0D8C7ECE280D6B4F00A87B0C /* Info.plist */,
+				0D414C50280832640093F6C2 /* WebWrapper6.entitlements */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		0DF19C63280DB39200493DDA /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0D7466C52809A0510070046A /* NSView + Extension.swift */,
+				0D7466C32809A0130070046A /* String + Extension.swift */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
+		0DF19C64280DB3A600493DDA /* configuration */ = {
+			isa = PBXGroup;
+			children = (
+				0D532ECA28095FC10080A079 /* Configurator.swift */,
+				0D8C7ECC280D6B2A00A87B0C /* InfoPlist.strings */,
+				0D7C5E4728082C2500D7EB72 /* Assets.xcassets */,
+			);
+			path = configuration;
+			sourceTree = "<group>";
+		};
+		0DF19C65280DB3B800493DDA /* res */ = {
+			isa = PBXGroup;
+			children = (
+				0D532EC828095FA90080A079 /* Localizable.strings */,
+			);
+			path = res;
+			sourceTree = "<group>";
+		};
+		0DF19C66280DB42000493DDA /* screens */ = {
+			isa = PBXGroup;
+			children = (
+				0D7C5E4528082C2400D7EB72 /* WebViewController.swift */,
+				0D532EC428095DA10080A079 /* WebMainView.swift */,
+			);
+			path = screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,7 +327,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = WebWrapper6/WebWrapper6.entitlements;
+				CODE_SIGN_ENTITLEMENTS = WebWrapper6/main/WebWrapper6.entitlements;
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -295,7 +335,7 @@
 				DEVELOPMENT_TEAM = 78ZDUA4YFF;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WebWrapper6/Info.plist;
+				INFOPLIST_FILE = WebWrapper6/main/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -315,7 +355,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = WebWrapper6/WebWrapper6.entitlements;
+				CODE_SIGN_ENTITLEMENTS = WebWrapper6/main/WebWrapper6.entitlements;
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -323,7 +363,7 @@
 				DEVELOPMENT_TEAM = 78ZDUA4YFF;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WebWrapper6/Info.plist;
+				INFOPLIST_FILE = WebWrapper6/main/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
