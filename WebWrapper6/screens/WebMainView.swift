@@ -19,32 +19,32 @@ final class WebMainView: NSView {
         return webView.allowAutoLayout()
     }()
     
-    var containerView: NSBox = {
+    var containerBoxView: NSBox = {
         let container = NSBox()
         container.boxType = .custom
         container.title = String.empty
         return container.allowAutoLayout()
     }()
     
-    var backButton: NSButton = {
+    var previousPageButton: NSButton = {
         let button = NSButton()
-        button.title = "BackButtonTitle".localizedString
+        button.title = "PreviousPageButtonTitle".localizedString
         button.isEnabled = false
         button.layer?.backgroundColor = CGColor.white
         return button.allowAutoLayout()
     }()
     
-    var homeButton: NSButton = {
+    var mainPageButton: NSButton = {
         let button = NSButton()
-        button.title = "HomePageButtonTitle".localizedString
+        button.title = "MainPageButtonTitle".localizedString
         button.layer?.backgroundColor = CGColor.white
         return button.allowAutoLayout()
     }()
     
-    var nextButton: NSButton = {
+    var nextPageButton: NSButton = {
         let button = NSButton()
         button.isEnabled = false
-        button.title = "NextButtonTitle".localizedString
+        button.title = "NextPageButtonTitle".localizedString
         button.layer?.backgroundColor = CGColor.white
         return button.allowAutoLayout()
     }()
@@ -60,7 +60,7 @@ final class WebMainView: NSView {
         }
         
         super.init(frame: frame)
-        configureView()
+        configureMainView()
     }
     
     @available(*, unavailable)
@@ -69,46 +69,45 @@ final class WebMainView: NSView {
     }
     
     //MARK: - Private Methods
-    private func configureView() {
-        setupSubviews()
-        setupLayout()
+    private func configureMainView() {
+        configureSubviews()
+        configureConstraints()
     }
     
-    private func setupSubviews() {
+    private func configureSubviews() {
         addSubview(webView)
-        addSubview(containerView)
-        containerView.addSubview(backButton)
-        containerView.addSubview(homeButton)
-        containerView.addSubview(nextButton)
+        addSubview(containerBoxView)
+        containerBoxView.addSubview(previousPageButton)
+        containerBoxView.addSubview(mainPageButton)
+        containerBoxView.addSubview(nextPageButton)
     }
     
-    private func setupLayout() {
+    private func configureConstraints() {
         NSLayoutConstraint.activate([
             webView.centerXAnchor.constraint(equalTo: centerXAnchor),
             webView.widthAnchor.constraint(equalTo: widthAnchor),
             webView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            webView.topAnchor.constraint(equalTo: containerView.bottomAnchor),
+            webView.topAnchor.constraint(equalTo: containerBoxView.bottomAnchor),
             
-            containerView.widthAnchor.constraint(equalTo: widthAnchor),
-            containerView.heightAnchor.constraint(equalToConstant: 70),
-            containerView.topAnchor.constraint(equalTo: topAnchor),
-            containerView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            containerBoxView.widthAnchor.constraint(equalTo: widthAnchor),
+            containerBoxView.heightAnchor.constraint(equalToConstant: 70),
+            containerBoxView.topAnchor.constraint(equalTo: topAnchor),
+            containerBoxView.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            backButton.widthAnchor.constraint(equalToConstant: 80),
-            backButton.heightAnchor.constraint(equalToConstant: 30),
-            backButton.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
-            backButton.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 30),
+            previousPageButton.widthAnchor.constraint(equalToConstant: 80),
+            previousPageButton.heightAnchor.constraint(equalToConstant: 30),
+            previousPageButton.centerYAnchor.constraint(equalTo: containerBoxView.centerYAnchor),
+            previousPageButton.leftAnchor.constraint(equalTo: containerBoxView.leftAnchor, constant: 30),
             
-            homeButton.widthAnchor.constraint(equalToConstant: 120),
-            homeButton.heightAnchor.constraint(equalToConstant: 30),
-            homeButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-            homeButton.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+            mainPageButton.widthAnchor.constraint(equalToConstant: 120),
+            mainPageButton.heightAnchor.constraint(equalToConstant: 30),
+            mainPageButton.centerXAnchor.constraint(equalTo: containerBoxView.centerXAnchor),
+            mainPageButton.centerYAnchor.constraint(equalTo: containerBoxView.centerYAnchor),
             
-            nextButton.widthAnchor.constraint(equalToConstant: 80),
-            nextButton.heightAnchor.constraint(equalToConstant: 30),
-            nextButton.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
-            nextButton.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -30)
+            nextPageButton.widthAnchor.constraint(equalToConstant: 80),
+            nextPageButton.heightAnchor.constraint(equalToConstant: 30),
+            nextPageButton.centerYAnchor.constraint(equalTo: containerBoxView.centerYAnchor),
+            nextPageButton.rightAnchor.constraint(equalTo: containerBoxView.rightAnchor, constant: -30)
         ])
     }
 }
-

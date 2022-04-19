@@ -6,6 +6,6 @@
   
 */
 
-"BackButtonTitle" = "Back";
-"HomePageButtonTitle" = "Homepage";
-"NextButtonTitle" = "Next";
+"PreviousPageButtonTitle" = "Back";
+"MainPageButtonTitle" = "Homepage";
+"NextPageButtonTitle" = "Next";
